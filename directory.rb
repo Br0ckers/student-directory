@@ -6,12 +6,15 @@ def input_students
   # get the first name
   name = gets.chomp
   # while the name is not empty, repeat this code
-  while !name.empty? do
+  while !name.empty? && name.start_with?("b") && name.length < 12 do
+    #if name.start_with?("b")
+
     # add teh student hash to the array
     students << {name: name, cohort: :november}
     puts "Now we have #{students.count} students"
     # get another name from the user
     name = gets.chomp
+    #end
   end
   # retuen the array of students
   students
@@ -22,9 +25,19 @@ def print_header
   puts "-------------"
 end
 def print(students)
-  students.each_with_index{|student, index|
-  indexplusone = index + 1
-  puts "#{indexplusone}. #{student[:name]} (#{student[:cohort]} cohort)"}
+  # modified for while loop
+  current_index = 0
+  while current_index < students.length do
+    student = students[current_index]
+    current_index += 1
+    puts "#{current_index}. #{student[:name]} (#{student[:cohort]} cohort)"
+    #current_index += 1
+  end
+  # original code start
+  #students.each_with_index{|student, index|
+  #indexplusone = index + 1
+  #puts "#{indexplusone}. #{student[:name]} (#{student[:cohort]} cohort)"}
+  # original code end
 end
 def print_footer(students)
   puts "Overall, we have #{students.count} great students"
