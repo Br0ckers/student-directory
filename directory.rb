@@ -31,7 +31,7 @@ def print(students)
   while current_index < students.length do
     student = students[current_index]
     current_index += 1
-    puts "#{current_index}. #{student[:name]} (#{student[:cohort]} cohort) (hobbie #{student[:hobbie]}) (country of birth #{student[:county_of_birth]}) (height #{student[:height]})"
+    puts "#{current_index}. #{student[:name].center(12)} (#{student[:cohort].to_s.center(10)} cohort) (hobbie #{student[:hobbie].to_s.center(12)}) (country of birth #{student[:county_of_birth].to_s.center(12)}) (height #{student[:height].to_s.center(4)})"
     #current_index += 1
   end
   # original code start
