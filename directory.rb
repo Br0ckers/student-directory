@@ -5,13 +5,14 @@ def input_students
   students = []
   # get the first name
   name = gets.chomp
+
   # while the name is not empty, repeat this code
   while !name.empty? && name.start_with?("b") && name.length < 12 do
     #if name.start_with?("b")
 
     # add teh student hash to the array
-    students << {name: name, cohort: :november}
-    puts "Now we have #{students.count} students"
+    students << {name: name, cohort: :november, hobbie: :fishing, county_of_birth: :UK, height: :"1.78"}
+    # puts "Now we have #{students.count} students"
     # get another name from the user
     name = gets.chomp
     #end
@@ -30,7 +31,7 @@ def print(students)
   while current_index < students.length do
     student = students[current_index]
     current_index += 1
-    puts "#{current_index}. #{student[:name]} (#{student[:cohort]} cohort)"
+    puts "#{current_index}. #{student[:name]} (#{student[:cohort]} cohort) (hobbie #{student[:hobbie]}) (country of birth #{student[:county_of_birth]}) (height #{student[:height]})"
     #current_index += 1
   end
   # original code start
